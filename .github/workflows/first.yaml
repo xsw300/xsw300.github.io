@@ -2,7 +2,7 @@ name: push on master
 on:
   push:
     branches:
-      - 'main'
+      - 'group/private'
 
 jobs:
   build:
@@ -11,7 +11,7 @@ jobs:
     steps:
     - name: Print a greeting
       env:
-        Branches: master
+        Branches: group/private
         ProjectName: KickCatchFish
       run: |
         echo $env:Branches
