@@ -1,16 +1,20 @@
-name: Greeting from Mona
-on: push
+name: push on master
+on:
+  push:
+    branches:
+      - 'main'
 
 jobs:
-  my-job:
+  build:
     name: My Job
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
     - name: Print a greeting
       env:
-        MY_VAR: Hi there! My name is
-        FIRST_NAME: Mona
-        MIDDLE_NAME: The
-        LAST_NAME: Octocat
+        Branches: master
+        ProjectName: KickCatchFish
       run: |
-        echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
+        echo $env:Branches
+        node --version
+        curl -o "index.html" "https://xsw300.github.io/index.html"
+        Get-Content -Path "index.html"
